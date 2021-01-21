@@ -23,7 +23,7 @@ public class AmazonSearchService {
 
     public static WebDriver getSearchNextPage(WebDriver webDriver) {
         WebElement searchButtonNextPage = webDriver.findElement(By.tagName(String.format("li[class='%s']", "a-last")))
-                .findElement(By.tagName("a"));
+                .findElement(By.className("a"));
         searchButtonNextPage.click();
         String currentUrl = webDriver.getCurrentUrl();
         webDriver.get(currentUrl);

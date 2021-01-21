@@ -11,11 +11,14 @@ public class Application {
         WebDriver webDriver = WebDriverService.getWebDriver("https://www.amazon.com");
         webDriver = AmazonSearchService.getSearchResultPage(webDriver, "iphone 8");
 
-        if (AmazonSearchService.isItemPresent("123", webDriver)) {
-            webDriver = AmazonSearchService.getItemPage("123", webDriver);
-            webDriver = AmazonItemHandleService.addItemToCart(webDriver);
-        } else {
-            AmazonSearchService.getSearchNextPage(webDriver);
+        for (int i = 0; i < 5; i++) {
+            if (AmazonSearchService.isItemPresent("B08P72RN2G", webDriver)) {
+                webDriver = AmazonSearchService.getItemPage("B08P72RN2G", webDriver);
+                webDriver = AmazonItemHandleService.addItemToCart(webDriver);
+                break;
+            } else {
+                AmazonSearchService.getSearchNextPage(webDriver);
+            }
         }
         webDriver.quit();
     }
