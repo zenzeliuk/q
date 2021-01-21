@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import ua.mainacademy.service.AmazonItemHandleService;
 import ua.mainacademy.service.AmazonSearchService;
 import ua.mainacademy.service.WebDriverService;
+import ua.mainacademy.util.TimeoutUtil;
 
 public class Application {
 
@@ -18,6 +19,7 @@ public class Application {
                 break;
             } else {
                 AmazonSearchService.getSearchNextPage(webDriver);
+                TimeoutUtil.waitSeconds(3);
             }
         }
         webDriver.quit();
