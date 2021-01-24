@@ -13,8 +13,8 @@ public class Application {
         webDriver = AmazonSearchService.getSearchResultPage(webDriver, "iphone 8");
 
         for (int i = 0; i < 5; i++) {
-            if (AmazonSearchService.isItemPresent("B08P72RN2G", webDriver)) {
-                webDriver = AmazonSearchService.getItemPage("B08P72RN2G", webDriver);
+            if (AmazonSearchService.isItemPresent("B01NAW9E1R", webDriver)) {
+                webDriver = AmazonSearchService.getItemPage("B01NAW9E1R", webDriver);
                 webDriver = AmazonItemHandleService.addItemToCart(webDriver);
                 break;
             } else {
